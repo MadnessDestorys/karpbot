@@ -11,7 +11,7 @@ client.on('message', message => {
 	let command = message.content.split(" ")[0].toLowerCase().slice(process.env.prefix.length);
 
 	let args = message.content.split(" ").slice(process.env.prefix.length);
-	if (message.content === '!ping') {
+	if (command === 'ping') {
 		message.channel.send('Pong.');
 	}
 });
