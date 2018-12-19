@@ -6,6 +6,11 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
+	if (message.author.bot || !message.content.startsWith(process.env.prefix)) { return; }
+
+	let command = message.content.split(" ")[0].toLowerCase().slice(process.env.prefix.length);
+
+	let args = message.content.split(" ").slice(process.env.prefix.length);
 	if (message.content === '!ping') {
 		message.channel.send('Pong.');
 	}
